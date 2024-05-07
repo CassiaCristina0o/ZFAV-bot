@@ -19,9 +19,10 @@ async def on_ready():
   print(f'Estou pronto! member Meu ID é {client.user.id} ')
 
 @client.event
+@client.event
 async def on_member_join(new_member):
-  if new_member.bot:
-    return
+  if new_member.bot or new_member.guild != 1038063822277202030:
+    return 
 
   channel = client.get_channel(desired_channel)
   
